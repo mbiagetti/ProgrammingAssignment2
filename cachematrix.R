@@ -5,11 +5,6 @@
 makeCacheMatrix <- function(x = matrix()) {
         ## this variable is the value of the cached function
         m <- NULL
-        ## this function set the value of the matrix and reset the cached value
-        set <- function(y) {
-          x <<- y
-          m <<- NULL
-        }
         ## this function return  the value of the matrix
         get <- function() x
         ## this function set the cached value of the inverse of the matrix 
@@ -17,7 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {
         ## this function return  the cached value of the matrix
         getsolve <- function() m
         ## return the functions
-        list(set = set, get = get,
+        list(get = get,
              setsolve = setsolve,
              getsolve = getsolve)
 }
